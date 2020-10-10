@@ -1,1 +1,1 @@
-# pre-compiled_seiscomp_vanilla
+# Pre-compiled SeisComp Vanilla
