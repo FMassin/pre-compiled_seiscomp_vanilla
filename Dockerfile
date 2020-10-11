@@ -78,7 +78,6 @@ USER sysop
 # Configure
 RUN $INSTALL_DIR/bin/seiscomp print env >> /home/sysop/.profile
 RUN $INSTALL_DIR/bin/seiscomp print crontab|crontab - 
-RUN echo 'source $SEISCOMP_ROOT/share/shell-completion/seiscomp.bash' >> /home/sysop/.profile
 RUN echo 'date' >> /home/sysop/.profile
 RUN echo 'echo \$SEISCOMP_ROOT is $SEISCOMP_ROOT' >> /home/sysop/.profile
 RUN echo 'seiscomp status |grep "is running"' >> /home/sysop/.profile
@@ -132,9 +131,9 @@ RUN echo 'seiscomp status |grep "WARNING"' >> /home/sysop/.profile
 
 #WORKDIR /home/sysop
 
-#VOLUME [$INSTALL_DIR"/etc/key"]
-#VOLUME [$INSTALL_DIR"/etc/inventory"]
-#VOLUME ["/home/sysop/.seiscomp3"]
+VOLUME [$INSTALL_DIR"/etc/key"]
+VOLUME [$INSTALL_DIR"/etc/inventory"]
+VOLUME ["/home/sysop/.seiscomp3"]
 #VOLUME ["/home/sysop/userdata"]
 
 USER root
