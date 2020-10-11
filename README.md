@@ -1,9 +1,9 @@
-# Pre-compiled SeisComp Vanilla
-# What
+# Pre-compiled SeisComP Vanilla
+## What
 This directory contains a Dockerfile to generate a simple SeisComP installation. 
 
-# How
-## Dependency
+## How
+### Dependency
 The only dependency is Docker. 
 
 On a Mac you can type in a terminal:
@@ -14,7 +14,7 @@ brew cask install docker
 Or follow instructions for your computer :
 https://docs.docker.com/compose/install/#install-compose
 
-## Setup (the docker image)
+### Setup (the docker image)
 
 To generate the docker image using the Dockerfile, run:
 
@@ -22,7 +22,7 @@ To generate the docker image using the Dockerfile, run:
 docker build -t seiscomp:latest -t  seiscomp:4.0.4 -t  seiscomp:4.0.4.debian10 .
 ```
 
-## Run (the docker image into a container)
+### Run (the docker image into a container)
 The resulting image has mount points. You can start the container as follows:
 
 ```
@@ -41,10 +41,10 @@ ssh-copy-id sysop@localhost -p 9999
 ssh -p 9999 sysop@localhost
 ```
 
-## Upgrade (the docker image)
+### Upgrade (the docker image)
 First login as root
 ```
-docker exec -u 0 -it seiscomp3 bash
+docker exec -u 0 -it seiscomp bash
 ```
 
 and make make changes. Go to /usr/local/src/seiscomp3 and follow seiscomp doc for upgrading seiscomp.
